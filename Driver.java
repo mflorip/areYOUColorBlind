@@ -17,23 +17,35 @@ public class Driver
 {
 
     private static final Random rand1 = new Random();
-    private static int game1state = level();
+    private static int game1state = num1to9();
+    private static int game2state = num1to4();
 
     static int page = 0;
 
-    private static int level() { //rename to num1to9
-        int r = rand1.nextInt(9) + 1;
-        return r;
+    private static int num1to9() { //rename to num1to9
+        int num1 = rand1.nextInt(9) + 1;
+        return num1;
+    }
+
+    private static int num1to4() { //rename to num1to9
+        int num2 = rand1.nextInt(4) + 1;
+        return num2;
     }
 
     public static void generateGame1State() {
+        game1state = num1to9();
+    }
 
-        game1state = level();
-
+    public static void generateGame2State() {
+        game2state = num1to4();
     }
 
     public static int getGame1State() {
         return game1state;
+    }
+
+    public static int getGame2State() {
+        return game2state;
     }
 
     public static void setPage(int p) {
@@ -48,6 +60,7 @@ public class Driver
         NumGen ng = new NumGen();
         TheMenu menu = new TheMenu();
         TopMenu topMenu = new TopMenu();
+        OtherGame game2 = new OtherGame();
 
         //runs the frame, which has both the "buttonPanelThingy" and "NumGen" panels
         JFrame frame = new JFrame();
@@ -61,6 +74,7 @@ public class Driver
 
         int prevPage = -1;
         int prevGame1State= game1state;
+
 
         while(true) {
 
@@ -82,8 +96,8 @@ public class Driver
                         break;
 
                     case 2:
-                        frame.getContentPane().add(topMenu);
-                        //andy's stuff
+                        frame.getContentPane().add(topMenu, BorderLayout.NORTH);
+                        frame.getContentPane().add(game2);
                         break;
 
                 }
@@ -107,6 +121,8 @@ public class Driver
                 frame.validate();
 
             }
+
+
 
             Thread.sleep(100);
 

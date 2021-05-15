@@ -10,6 +10,7 @@ public class ButtonPanelThing extends JPanel
 {
     //things
     JTextField result;
+    JTextField myScore;
 
     //los buttons
     JButton b1, b2, b3, b4, b5, b6, b7, b8, b9;
@@ -17,20 +18,31 @@ public class ButtonPanelThing extends JPanel
     //just to make the real buttons format better
     JButton bn1, bn2, bn3, bn4, bn5, bn6, bn7;
 
+    static JProgressBar prog;
+
+    int score = 0;
+
+    int total = 0;
+
+
+    JPanel scoNProg;
 
 
     public  ButtonPanelThing() {
 
-        int count = 0;
+        prog = new JProgressBar(0, 200);
+        prog.setBounds(100, 5, 500, 300);
 
 
         result= new JTextField();
-        result.setBounds(450, 350, 40, 20);
+        myScore = new JTextField();
+        result.setBounds(450, 350, 30, 20);
+
+        setBounds(10, 150, 200, 300);
 
         //setting background of panel
         setBackground(Color.BLACK);
-        setSize(400, 300);
-        setLayout(new GridLayout(6, 3, 10, 10));
+        setLayout(new GridLayout(6, 3, 5, 5));
         setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         //creating buttons
@@ -65,10 +77,11 @@ public class ButtonPanelThing extends JPanel
         add (b7);
         add (b8);
         add (b9);
-        add(bn4);
-        add(bn5);
-        add(bn6);
+        //add(bn4);
+        //add(bn5);
+        //add(bn6);
         add(result);
+        add(prog);
 
         //hiding the "bn" buttons
         bn1.setOpaque(false);
@@ -106,17 +119,49 @@ public class ButtonPanelThing extends JPanel
             public void actionPerformed(ActionEvent e)
             {
 
+
                 if (Driver.getGame1State() == 1)
                 {
                     result.setText("  Correct!");
                     Driver.generateGame1State();
+                    score++;
+                    total++;
+                    myScore.setText("  Score:  " + score);
+                    prog.setValue(prog.getValue()+10);
+
 
                 }
                 else
                 {
                     result.setText("  Incorrect.");
+                    try
+                    {
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException e1)
+                    {
+                        e1.printStackTrace();
+                    }
+                    total++;
 
                 }
+
+                if(total == 20) {
+
+                    result.setText("Your score: " + score + "/" + 20);
+                    b1.setEnabled(false);
+                    b2.setEnabled(false);
+                    b3.setEnabled(false);
+                    b4.setEnabled(false);
+                    b5.setEnabled(false);
+                    b6.setEnabled(false);
+                    b7.setEnabled(false);
+                    b8.setEnabled(false);
+                    b9.setEnabled(false);
+
+
+                }
+
             }
         });
 
@@ -127,14 +172,42 @@ public class ButtonPanelThing extends JPanel
 
                 if (Driver.getGame1State() == 2)
                 {
-                    result.setText("  Correct!");Driver.generateGame1State();
+                    result.setText("  Correct!");
+                    Driver.generateGame1State();
+                    score++;
+                    myScore.setText("  Score:  " + score);
+                    prog.setValue(prog.getValue()+10);
+                    total++;
+
 
                 }
                 else
                 {
                     result.setText("  Incorrect.");
+                    try
+                    {
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException e1)
+                    {
+                        e1.printStackTrace();
+                    }
+                    total++;
 
+                }
 
+                if(total == 20) {
+
+                    result.setText("Your score: " + score + "/" + 20);
+                    b1.setEnabled(false);
+                    b2.setEnabled(false);
+                    b3.setEnabled(false);
+                    b4.setEnabled(false);
+                    b5.setEnabled(false);
+                    b6.setEnabled(false);
+                    b7.setEnabled(false);
+                    b8.setEnabled(false);
+                    b9.setEnabled(false);
                 }
             }
         });
@@ -146,14 +219,41 @@ public class ButtonPanelThing extends JPanel
 
                 if (Driver.getGame1State() == 3)
                 {
-                    result.setText("  Correct!");Driver.generateGame1State();
+                    result.setText("  Correct!");
+                    Driver.generateGame1State();
+                    score++;
+                    myScore.setText("  Score:  " + score);
+                    prog.setValue(prog.getValue()+10);
+                    total++;
 
                 }
                 else
                 {
                     result.setText("  Incorrect.");
+                    try
+                    {
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException e1)
+                    {
+                        e1.printStackTrace();
+                    }
+                    total++;
 
+                }
 
+                if(total == 20) {
+
+                    result.setText("Your score: " + score + "/" + 20);
+                    b1.setEnabled(false);
+                    b2.setEnabled(false);
+                    b3.setEnabled(false);
+                    b4.setEnabled(false);
+                    b5.setEnabled(false);
+                    b6.setEnabled(false);
+                    b7.setEnabled(false);
+                    b8.setEnabled(false);
+                    b9.setEnabled(false);
                 }
             }
         });
@@ -165,14 +265,42 @@ public class ButtonPanelThing extends JPanel
 
                 if (Driver.getGame1State() == 4)
                 {
-                    result.setText("  Correct!");Driver.generateGame1State();
+                    result.setText("  Correct!");
+                    Driver.generateGame1State();
+                    score++;
+                    myScore.setText("  Score:  " + score);
+
+                    prog.setValue(prog.getValue()+10);
+                    total++;
 
                 }
                 else
                 {
                     result.setText("  Incorrect.");
+                    try
+                    {
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException e1)
+                    {
+                        e1.printStackTrace();
+                    }
+                    total++;
 
+                }
 
+                if(total == 20) {
+
+                    result.setText("Your score: " + score + "/" + 20);
+                    b1.setEnabled(false);
+                    b2.setEnabled(false);
+                    b3.setEnabled(false);
+                    b4.setEnabled(false);
+                    b5.setEnabled(false);
+                    b6.setEnabled(false);
+                    b7.setEnabled(false);
+                    b8.setEnabled(false);
+                    b9.setEnabled(false);
                 }
             }
         });
@@ -184,12 +312,41 @@ public class ButtonPanelThing extends JPanel
 
                 if (Driver.getGame1State() == 5)
                 {
-                    result.setText("  Correct!");Driver.generateGame1State();
+                    result.setText("  Correct!");
+                    Driver.generateGame1State();
+                    score++;
+                    myScore.setText("  Score:  " + score);
+                    prog.setValue(prog.getValue()+10);
+                    total++;
+
                 }
                 else
                 {
                     result.setText("  Incorrect.");
+                    try
+                    {
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException e1)
+                    {
+                        e1.printStackTrace();
+                    }
+                    total++;
 
+                }
+
+                if(total == 20) {
+
+                    result.setText("Your score: " + score + "/" + 20);
+                    b1.setEnabled(false);
+                    b2.setEnabled(false);
+                    b3.setEnabled(false);
+                    b4.setEnabled(false);
+                    b5.setEnabled(false);
+                    b6.setEnabled(false);
+                    b7.setEnabled(false);
+                    b8.setEnabled(false);
+                    b9.setEnabled(false);
                 }
             }
         });
@@ -201,14 +358,42 @@ public class ButtonPanelThing extends JPanel
 
                 if (Driver.getGame1State() == 6)
                 {
-                    result.setText("  Correct!");Driver.generateGame1State();
+                    result.setText("  Correct!");
+                    Driver.generateGame1State();
+                    score++;
+                    myScore.setText("  Score:  " + score);
+                    prog.setValue(prog.getValue()+10);
+                    total++;
+
 
                 }
                 else
                 {
                     result.setText("  Incorrect.");
+                    try
+                    {
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException e1)
+                    {
+                        e1.printStackTrace();
+                    }
+                    total++;
 
+                }
 
+                if(total == 20) {
+
+                    result.setText("Your score: " + score + "/" + 20);
+                    b1.setEnabled(false);
+                    b2.setEnabled(false);
+                    b3.setEnabled(false);
+                    b4.setEnabled(false);
+                    b5.setEnabled(false);
+                    b6.setEnabled(false);
+                    b7.setEnabled(false);
+                    b8.setEnabled(false);
+                    b9.setEnabled(false);
                 }
             }
         });
@@ -219,14 +404,42 @@ public class ButtonPanelThing extends JPanel
             {
                 if (Driver.getGame1State() == 7)
                 {
-                    result.setText("  Correct!");Driver.generateGame1State();
+                    result.setText("  Correct!");
+                    Driver.generateGame1State();
+                    score++;
+                    myScore.setText("  Score:  " + score);
+                    prog.setValue(prog.getValue()+10);
+                    total++;
+
 
                 }
                 else
                 {
                     result.setText("  Incorrect.");
+                    try
+                    {
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException e1)
+                    {
+                        e1.printStackTrace();
+                    }
+                    total++;
 
+                }
 
+                if(total == 20) {
+
+                    result.setText("Your score: " + score + "/" + 20);
+                    b1.setEnabled(false);
+                    b2.setEnabled(false);
+                    b3.setEnabled(false);
+                    b4.setEnabled(false);
+                    b5.setEnabled(false);
+                    b6.setEnabled(false);
+                    b7.setEnabled(false);
+                    b8.setEnabled(false);
+                    b9.setEnabled(false);
                 }
             }
         });
@@ -237,14 +450,43 @@ public class ButtonPanelThing extends JPanel
             {
                 if (Driver.getGame1State() == 8)
                 {
-                    result.setText("  Correct!");Driver.generateGame1State();
+                    result.setText("  Correct!");
+                    Driver.generateGame1State();
+
+                    score++;
+                    myScore.setText("  Score:  " + score);
+                    prog.setValue(prog.getValue()+10);
+                    total++;
+
 
                 }
                 else
                 {
                     result.setText("  Incorrect.");
+                    try
+                    {
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException e1)
+                    {
+                        e1.printStackTrace();
+                    }
+                    total++;
 
+                }
 
+                if(total == 20) {
+
+                    result.setText("Your score: " + score + "/" + 20);
+                    b1.setEnabled(false);
+                    b2.setEnabled(false);
+                    b3.setEnabled(false);
+                    b4.setEnabled(false);
+                    b5.setEnabled(false);
+                    b6.setEnabled(false);
+                    b7.setEnabled(false);
+                    b8.setEnabled(false);
+                    b9.setEnabled(false);
                 }
             }
         });
@@ -255,15 +497,41 @@ public class ButtonPanelThing extends JPanel
             {
                 if (Driver.getGame1State() == 9)
                 {
-                    result.setText("  Correct!");Driver.generateGame1State();
+                    result.setText("  Correct!");
+                    Driver.generateGame1State();
+                    score++;
+                    myScore.setText("  Score:  " + score);
+                    prog.setValue(prog.getValue()+10);
+                    total++;
+
 
                 }
                 else
                 {
                     result.setText("  Incorrect.");
+                    try
+                    {
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException e1)
+                    {
+                        e1.printStackTrace();
+                    }
+                    total++;
+                }
 
+                if(total == 20) {
 
-
+                    result.setText("Your score: " + score + "/" + 20);
+                    b1.setEnabled(false);
+                    b2.setEnabled(false);
+                    b3.setEnabled(false);
+                    b4.setEnabled(false);
+                    b5.setEnabled(false);
+                    b6.setEnabled(false);
+                    b7.setEnabled(false);
+                    b8.setEnabled(false);
+                    b9.setEnabled(false);
                 }
             }
         });

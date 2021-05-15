@@ -18,6 +18,8 @@ public class NumGen extends JPanel
     Color randomColor;
     Color bgColor;
 
+
+
     public void paintComponent(Graphics g) {
 
         randomColor = new Color(r1, g1, b1);
@@ -39,11 +41,11 @@ public class NumGen extends JPanel
 
                     //B
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(270, 120, 30, 100);
+                    g2d.fillRect(150, 120, 30, 100);
 
                    //C
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(270, 220, 30, 100);
+                    g2d.fillRect(150, 220, 30, 100);
                 }
 
                 //if random number is 2
@@ -52,23 +54,23 @@ public class NumGen extends JPanel
 
                     //A
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 120, 100, 30);
+                    g2d.fillRect(130, 120, 100, 30);
 
                     //B
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(270, 120, 30, 100);
+                    g2d.fillRect(200, 120, 30, 100);
 
                     //D
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 310, 100, 30);
+                    g2d.fillRect(130, 310, 100, 30);
 
                     //E
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 220, 30, 100);
+                    g2d.fillRect(130, 220, 30, 100);
 
                     //G
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 215, 100, 30);
+                    g2d.fillRect(130, 215, 100, 30);
                 }
 
                 //if random number is 3
@@ -77,23 +79,23 @@ public class NumGen extends JPanel
 
                     //A
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 120, 100, 30);
+                    g2d.fillRect(130, 120, 100, 30);
 
                     //B
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(270, 120, 30, 100);
+                    g2d.fillRect(200, 120, 30, 100);
 
                     //C
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(270, 220, 30, 100);
+                    g2d.fillRect(200, 220, 30, 100);
 
                     //D
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 310, 100, 30);
+                    g2d.fillRect(130, 310, 100, 30);
 
                     //G
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 215, 100, 30);
+                    g2d.fillRect(130, 215, 100, 30);
                 }
 
                 //if random number is 4
@@ -102,19 +104,19 @@ public class NumGen extends JPanel
 
                     //B
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(270, 120, 30, 100);
+                    g2d.fillRect(200, 120, 30, 100);
 
                    //C
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(270, 220, 30, 100);
+                    g2d.fillRect(200, 220, 30, 100);
 
                     //F
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 120, 30, 100);
+                    g2d.fillRect(130, 120, 30, 100);
 
                     //G
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 215, 100, 30);
+                    g2d.fillRect(130, 215, 100, 30);
                 }
 
                 //if random number is 5
@@ -123,23 +125,23 @@ public class NumGen extends JPanel
 
                     //A
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 120, 100, 30);
+                    g2d.fillRect(130, 120, 100, 30);
 
                     //C
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(270, 220, 30, 100);
+                    g2d.fillRect(200, 220, 30, 100);
 
                     //D
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 310, 100, 30);
+                    g2d.fillRect(130, 310, 100, 30);
 
                     //F
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 120, 30, 100);
+                    g2d.fillRect(130, 120, 30, 100);
 
                     //G
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 215, 100, 30);
+                    g2d.fillRect(130, 215, 100, 30);
                 }
 
                 //if random number is 6
@@ -148,27 +150,27 @@ public class NumGen extends JPanel
 
                     //A
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 120, 100, 30);
+                    g2d.fillRect(130, 120, 100, 30);
 
                     //C
                      g2d.setPaint(randomColor);
-                     g2d.fillRect(270, 220, 30, 100);
+                     g2d.fillRect(200, 220, 30, 100);
 
                      //D
                      g2d.setPaint(randomColor);
-                     g2d.fillRect(200, 310, 100, 30);
+                     g2d.fillRect(130, 310, 100, 30);
 
                      //E
                      g2d.setPaint(randomColor);
-                     g2d.fillRect(200, 220, 30, 100);
+                     g2d.fillRect(130, 220, 30, 100);
 
                      //F
                      g2d.setPaint(randomColor);
-                     g2d.fillRect(200, 120, 30, 100);
+                     g2d.fillRect(130, 120, 30, 100);
 
                      //G
                      g2d.setPaint(randomColor);
-                     g2d.fillRect(200, 215, 100, 30);
+                     g2d.fillRect(130, 215, 100, 30);
                 }
 
                 //if random number is 7
@@ -177,15 +179,15 @@ public class NumGen extends JPanel
 
                     //A
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 120, 100, 30);
+                    g2d.fillRect(130, 120, 100, 30);
 
                     //B
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(270, 120, 30, 100);
+                    g2d.fillRect(200, 120, 30, 100);
 
                    //C
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(270, 220, 30, 100);
+                    g2d.fillRect(200, 220, 30, 100);
                 }
 
                 //if random number is 8
@@ -194,31 +196,31 @@ public class NumGen extends JPanel
 
                     //A
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 120, 100, 30);
+                    g2d.fillRect(130, 120, 100, 30);
 
                     //B
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(270, 120, 30, 100);
+                    g2d.fillRect(200, 120, 30, 100);
 
                     //C
                      g2d.setPaint(randomColor);
-                     g2d.fillRect(270, 220, 30, 100);
+                     g2d.fillRect(200, 220, 30, 100);
 
                      //D
                      g2d.setPaint(randomColor);
-                     g2d.fillRect(200, 310, 100, 30);
+                     g2d.fillRect(130, 310, 100, 30);
 
                      //E
                      g2d.setPaint(randomColor);
-                     g2d.fillRect(200, 220, 30, 100);
+                     g2d.fillRect(130, 220, 30, 100);
 
                      //F
                      g2d.setPaint(randomColor);
-                     g2d.fillRect(200, 120, 30, 100);
+                     g2d.fillRect(130, 120, 30, 100);
 
                      //G
                      g2d.setPaint(randomColor);
-                     g2d.fillRect(200, 215, 100, 30);
+                     g2d.fillRect(130, 215, 100, 30);
                 }
 
 
@@ -228,27 +230,27 @@ public class NumGen extends JPanel
 
                     //A
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(200, 120, 100, 30);
+                    g2d.fillRect(130, 120, 100, 30);
 
                     //B
                     g2d.setPaint(randomColor);
-                    g2d.fillRect(270, 120, 30, 100);
+                    g2d.fillRect(200, 120, 30, 100);
 
                     //C
                      g2d.setPaint(randomColor);
-                     g2d.fillRect(270, 220, 30, 100);
+                     g2d.fillRect(200, 220, 30, 100);
 
                      //D
                      g2d.setPaint(randomColor);
-                     g2d.fillRect(200, 310, 100, 30);
+                     g2d.fillRect(130, 310, 100, 30);
 
                      //F
                      g2d.setPaint(randomColor);
-                     g2d.fillRect(200, 120, 30, 100);
+                     g2d.fillRect(130, 120, 30, 100);
 
                      //G
                      g2d.setPaint(randomColor);
-                     g2d.fillRect(200, 215, 100, 30);
+                     g2d.fillRect(130, 215, 100, 30);
                 }
 
 
