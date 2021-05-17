@@ -74,6 +74,7 @@ public class Driver
 
         int prevPage = -1;
         int prevGame1State= game1state;
+        int prevGame2State = game2state;
 
 
         while(true) {
@@ -105,7 +106,7 @@ public class Driver
                 frame.validate();
 
             }
-
+/*
             if(game1state != prevGame1State) {
 
                 prevGame1State = game1state;
@@ -122,13 +123,22 @@ public class Driver
 
             }
 
+            if(game2state != prevGame2State) {
 
+                prevGame2State = game2state;
 
-            Thread.sleep(100);
+                frame.getContentPane().removeAll();
 
+                frame.getContentPane().add(topMenu, BorderLayout.NORTH);
+                frame.getContentPane().add(game2, BorderLayout.CENTER);
 
+                frame.repaint();
+
+                frame.validate();
+            }
+            */
+            Thread.sleep(500);
         }
-
     }
 
     public static void main(String[] args) throws InterruptedException

@@ -1,6 +1,8 @@
 package iColor;
 
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
@@ -25,16 +27,26 @@ public class OtherGame extends JPanel
     float g1 = (float)(rand.nextFloat() / 2f + 0.5);
     float b1 = (float)(rand.nextFloat() / 2f + 0.5);
     JTextField     result;
-
+    Color diffColor;
     Color randomColor;
+    Color bgColor;
+
+    float r2 = (float)(rand.nextFloat() / 2f + 0.5);
+    float g2 = (float)(rand.nextFloat() / 2f + 0.5);
+    float b2 = (float)(rand.nextFloat() / 2f + 0.5);
+
 
     public OtherGame() {
+
+        setLayout(null);
 
         setBounds(400, 200, 800, 600);
         result = new JTextField(16);
         result.setBounds(450, 350, 100, 30);
         randomColor = new Color(r1, g1, b1);
-        Color diffColor = brighten(randomColor, 0.1);
+        diffColor = brighten(randomColor, 0.1);
+        bgColor = new Color(r2, g2, b2);
+        setBackground(bgColor);
 
         sq1 = new JButton();
         sq2 = new JButton();
@@ -65,6 +77,9 @@ public class OtherGame extends JPanel
                 if (Driver.getGame2State() == 1)
                 {
                     result.setText("Correct!");
+                    Driver.generateGame2State();
+                    randomColor = new Color(r1, g1, b1);
+                    diffColor = brighten(randomColor, 0.1);
                 }
                 else
                 {
@@ -88,6 +103,9 @@ public class OtherGame extends JPanel
                 if (Driver.getGame2State() == 2)
                 {
                     result.setText("Correct!");
+                    Driver.generateGame2State();
+                    randomColor = new Color(r1, g1, b1);
+                    diffColor = brighten(randomColor, 0.1);
                 }
                 else
                 {
@@ -111,6 +129,9 @@ public class OtherGame extends JPanel
                 if (Driver.getGame2State() == 3)
                 {
                     result.setText("Correct!");
+                    Driver.generateGame2State();
+                    randomColor = new Color(r1, g1, b1);
+                    diffColor = brighten(randomColor, 0.1);
                 }
                 else
                 {
@@ -134,6 +155,9 @@ public class OtherGame extends JPanel
                 if (Driver.getGame2State() == 4)
                 {
                     result.setText("Correct!");
+                    Driver.generateGame2State();
+                    randomColor = new Color(r1, g1, b1);
+                    diffColor = brighten(randomColor, 0.1);
                 }
                 else
                 {
@@ -167,5 +191,18 @@ public class OtherGame extends JPanel
         return new Color(red, green, blue, alpha);
 
     }
+
+    public void paintComponent(Graphics g) {
+
+
+        super.paintComponent(g);
+        Graphics2D g2d = (Graphics2D) g;
+
+      //B
+        g2d.setPaint(randomColor);
+        g2d.fillRect(150, 120, 30, 100);
+
+    }
+
 
 }
