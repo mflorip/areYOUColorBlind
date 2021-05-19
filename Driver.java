@@ -73,9 +73,6 @@ public class Driver
 
 
         int prevPage = -1;
-        int prevGame1State= game1state;
-        int prevGame2State = game2state;
-
 
         while(true) {
 
