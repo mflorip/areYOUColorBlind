@@ -36,13 +36,29 @@ public class OtherGame extends JPanel
     float b2 = (float)(rand.nextFloat() / 2f + 0.5);
 
 
-    public OtherGame() {
+    public static Color brighten(Color color, double fraction) {
+
+        int red = (int) Math.round(Math.min(255, color.getRed() + 255 * fraction));
+        int green = (int) Math.round(Math.min(255, color.getGreen() + 255 * fraction));
+        int blue = (int) Math.round(Math.min(255, color.getBlue() + 255 * fraction));
+
+        int alpha = color.getAlpha();
+
+        return new Color(red, green, blue, alpha);
+
+    }
+
+    public void paintComponent(Graphics g) {
+
+
+        super.paintComponent(g);
+        Graphics2D g2d = (Graphics2D) g;
 
         setLayout(null);
 
-        setBounds(400, 200, 800, 600);
+        setBounds(0, 20, 800, 600);
         result = new JTextField(16);
-        result.setBounds(450, 350, 100, 30);
+        result.setBounds(350, 350, 100, 30);
         randomColor = new Color(r1, g1, b1);
         diffColor = brighten(randomColor, 0.1);
         bgColor = new Color(r2, g2, b2);
@@ -65,6 +81,8 @@ public class OtherGame extends JPanel
         //if random number is 1
         if(Driver.getGame2State() == 1) {
             sq1.setBackground(diffColor);
+            g2d.setPaint(diffColor);
+            g2d.fillRect(275, 150, 45, 47);
         }
         else
         {
@@ -91,6 +109,8 @@ public class OtherGame extends JPanel
         //if random number is 2
         if(Driver.getGame2State() == 2) {
             sq2.setBackground(diffColor);
+            g2d.setPaint(diffColor);
+            g2d.fillRect(275, 150, 97, 97);
         }
         else
         {
@@ -177,30 +197,6 @@ public class OtherGame extends JPanel
         add(sq4);
         add(result);
 
-    }
-
-
-    public static Color brighten(Color color, double fraction) {
-
-        int red = (int) Math.round(Math.min(255, color.getRed() + 255 * fraction));
-        int green = (int) Math.round(Math.min(255, color.getGreen() + 255 * fraction));
-        int blue = (int) Math.round(Math.min(255, color.getBlue() + 255 * fraction));
-
-        int alpha = color.getAlpha();
-
-        return new Color(red, green, blue, alpha);
-
-    }
-
-    public void paintComponent(Graphics g) {
-
-
-        super.paintComponent(g);
-        Graphics2D g2d = (Graphics2D) g;
-
-      //B
-        g2d.setPaint(randomColor);
-        g2d.fillRect(150, 120, 30, 100);
 
     }
 
