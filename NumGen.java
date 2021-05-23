@@ -18,8 +18,6 @@ public class NumGen extends JPanel
     Color randomColor;
     Color bgColor;
 
-
-
     public void paintComponent(Graphics g) {
 
         randomColor = new Color(r1, g1, b1);
@@ -29,11 +27,6 @@ public class NumGen extends JPanel
         this.setBackground(Color.GREEN);
 
         Graphics2D g2d = (Graphics2D) g;
-
-        int[] xPts = {100, 200, 300};
-        int[] yPts = {100, 200, 300};
-
-
 
                 //if random number is 1
                 if(Driver.getGame1State() == 1) {

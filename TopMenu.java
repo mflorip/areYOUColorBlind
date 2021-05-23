@@ -20,7 +20,6 @@ public class TopMenu extends JPanel
     JButton home;
     JButton quit;
 
-
     public TopMenu() {
 
         this.setBackground(Color.BLACK);
@@ -38,7 +37,6 @@ public class TopMenu extends JPanel
             public void actionPerformed(ActionEvent e)
             {
                 Driver.setPage(0);
-
             }
         });
 

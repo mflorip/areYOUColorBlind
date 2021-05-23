@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.util.Random;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *  Write a one-sentence summary of your class here.
@@ -20,7 +21,7 @@ public class Driver
     private static int game1state = num1to9();
     private static int game2state = num1to4();
 
-    static int page = 0;
+    static volatile int page = 0;
 
     private static int num1to9() { //rename to num1to9
         int num1 = rand1.nextInt(9) + 1;
@@ -56,13 +57,13 @@ public class Driver
 
     public Driver() throws InterruptedException {
 
-        ButtonPanelThing bp = new ButtonPanelThing();
+        ButtonPanel bp = new ButtonPanel();
         NumGen ng = new NumGen();
-        TheMenu menu = new TheMenu();
+        MainMenu menu = new MainMenu();
         TopMenu topMenu = new TopMenu();
         OtherGame game2 = new OtherGame();
 
-        //runs the frame, which has both the "buttonPanelThingy" and "NumGen" panels
+        //runs the frame, which has both the "buttonPanel" and "NumGen" panels
         JFrame frame = new JFrame();
         frame.setVisible(true);
         frame.setSize(800, 600);
@@ -70,7 +71,6 @@ public class Driver
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.getContentPane();
-
 
         int prevPage = -1;
 
@@ -103,37 +103,7 @@ public class Driver
                 frame.validate();
 
             }
-/*
-            if(game1state != prevGame1State) {
 
-                prevGame1State = game1state;
-
-                frame.getContentPane().removeAll();
-
-                frame.getContentPane().add(topMenu, BorderLayout.NORTH);
-                frame.getContentPane().add(bp, BorderLayout.EAST);
-                frame.getContentPane().add(ng);
-
-                frame.repaint();
-
-                frame.validate();
-
-            }
-
-            if(game2state != prevGame2State) {
-
-                prevGame2State = game2state;
-
-                frame.getContentPane().removeAll();
-
-                frame.getContentPane().add(topMenu, BorderLayout.NORTH);
-                frame.getContentPane().add(game2, BorderLayout.CENTER);
-
-                frame.repaint();
-
-                frame.validate();
-            }
-            */
             Thread.sleep(500);
         }
     }

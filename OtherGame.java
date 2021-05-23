@@ -61,9 +61,6 @@ public class OtherGame extends JPanel
         setBackground(bgColor);
 
 
-
-
-
         //if random number is 1
         if(Driver.getGame2State() == 1) {
             sq1.setBackground(diffColor);
