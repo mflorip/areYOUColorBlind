@@ -27,8 +27,8 @@ public class OtherGame extends JPanel
     float g1 = (float)(rand.nextFloat() / 2f + 0.5);
     float b1 = (float)(rand.nextFloat() / 2f + 0.5);
     JTextField     result;
-    Color diffColor;
-    Color randomColor;
+    Color randomColor  = new Color(r1, g1, b1);
+    Color diffColor = brighten(randomColor, 0.1);;
     Color bgColor;
 
     float r2 = (float)(rand.nextFloat() / 2f + 0.5);
@@ -54,13 +54,12 @@ public class OtherGame extends JPanel
 
         setLayout(null);
 
-        firstLevel(); //ATTEMPTING TO FIX THE ERROR ON THE FIRST SCREEN
+        firstLevel();
 
         setBounds(0, 20, 800, 600);
         result = new JTextField(16);
         result.setBounds(350, 350, 100, 30);
-        bgColor = new Color(r2, g2, b2);
-        setBackground(bgColor);
+
 
         //if random number is 1
         sq1.addActionListener(new ActionListener() {
@@ -171,14 +170,12 @@ public class OtherGame extends JPanel
         if(Driver.getGame2State()==4) sq4.setBackground(diffColor);
         else sq4.setBackground(randomColor);
 
+        this.repaint();
 
     }
 
     public void nextLevel(){
-        Driver.generateGame2State();
 
-        randomColor = new Color(r1, g1, b1);
-        diffColor = brighten(randomColor, 0.1);
 
         if(Driver.getGame2State()==1) sq1.setBackground(diffColor);
         else sq1.setBackground(randomColor);
