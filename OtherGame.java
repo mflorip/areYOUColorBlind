@@ -54,7 +54,7 @@ public class OtherGame extends JPanel
 
         setLayout(null);
 
-        nextLevel();
+        firstLevel(); //ATTEMPTING TO FIX THE ERROR ON THE FIRST SCREEN
 
         setBounds(0, 20, 800, 600);
         result = new JTextField(16);
@@ -157,16 +157,25 @@ public class OtherGame extends JPanel
 
     public void firstLevel() {
 
-        sq1.setBackground(randomColor);
-        sq2.setBackground(randomColor);
-        sq3.setBackground(randomColor);
-        sq4.setBackground(diffColor);
+        Driver.generateGame2State();
+
+        if(Driver.getGame2State()==1) sq1.setBackground(diffColor);
+        else sq1.setBackground(randomColor);
+
+        if(Driver.getGame2State()==2) sq2.setBackground(diffColor);
+        else sq2.setBackground(randomColor);
+
+        if(Driver.getGame2State()==3) sq3.setBackground(diffColor);
+        else sq3.setBackground(randomColor);
+
+        if(Driver.getGame2State()==4) sq4.setBackground(diffColor);
+        else sq4.setBackground(randomColor);
+
 
     }
 
     public void nextLevel(){
         Driver.generateGame2State();
-        System.out.println(Driver.getGame2State());
 
         randomColor = new Color(r1, g1, b1);
         diffColor = brighten(randomColor, 0.1);
@@ -199,12 +208,6 @@ public class OtherGame extends JPanel
 
     }
 
-    public void paintComponent(Graphics g) {
-
-        super.paintComponent(g);
-        Graphics2D g2d = (Graphics2D) g;
-
-    }
 
 
 }
