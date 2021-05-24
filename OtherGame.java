@@ -35,6 +35,7 @@ public class OtherGame extends JPanel
     float g2 = (float)(rand.nextFloat() / 2f + 0.5);
     float b2 = (float)(rand.nextFloat() / 2f + 0.5);
 
+    int count = 0;
 
     public OtherGame() {
         sq1 = new JButton();
@@ -50,9 +51,10 @@ public class OtherGame extends JPanel
         sq3.setBorderPainted(false);
         sq4.setOpaque(true);
         sq4.setBorderPainted(false);
-        nextLevel();
 
         setLayout(null);
+
+        nextLevel();
 
         setBounds(0, 20, 800, 600);
         result = new JTextField(16);
@@ -60,15 +62,7 @@ public class OtherGame extends JPanel
         bgColor = new Color(r2, g2, b2);
         setBackground(bgColor);
 
-
         //if random number is 1
-        if(Driver.getGame2State() == 1) {
-            sq1.setBackground(diffColor);
-        }
-        else
-        {
-            sq1.setBackground(randomColor);
-        }
         sq1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
@@ -78,6 +72,7 @@ public class OtherGame extends JPanel
                     result.setText("Correct!");
                     Driver.generateGame2State();
                     nextLevel();
+
                 }
                 else
                 {
@@ -87,15 +82,7 @@ public class OtherGame extends JPanel
         });
 
         //if random number is 2
-        if(Driver.getGame2State() == 2) {
-            sq2.setBackground(diffColor);
-            //g2d.setPaint(diffColor);
-            //g2d.fillRect(275, 150, 97, 97);
-        }
-        else
-        {
-            sq2.setBackground(randomColor);
-        }
+
         sq2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
@@ -115,13 +102,7 @@ public class OtherGame extends JPanel
         });
 
         //if random number is 3
-        if(Driver.getGame2State() == 3) {
-            sq3.setBackground(diffColor);
-        }
-        else
-        {
-            sq3.setBackground(randomColor);
-        }
+
         sq3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
@@ -141,13 +122,7 @@ public class OtherGame extends JPanel
         });
 
         //if random number is 4
-        if(Driver.getGame2State() == 4) {
-            sq4.setBackground(diffColor);
-        }
-        else
-        {
-            sq4.setBackground(randomColor);
-        }
+
         sq4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
@@ -180,7 +155,18 @@ public class OtherGame extends JPanel
 
     }
 
+    public void firstLevel() {
+
+        sq1.setBackground(randomColor);
+        sq2.setBackground(randomColor);
+        sq3.setBackground(randomColor);
+        sq4.setBackground(diffColor);
+
+    }
+
     public void nextLevel(){
+        Driver.generateGame2State();
+        System.out.println(Driver.getGame2State());
 
         randomColor = new Color(r1, g1, b1);
         diffColor = brighten(randomColor, 0.1);
