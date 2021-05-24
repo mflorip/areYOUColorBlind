@@ -93,7 +93,6 @@ public class MainMenu extends JPanel
         game2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
-                Driver.generateGame2State();
                 Driver.setPage(2);
             }
         });

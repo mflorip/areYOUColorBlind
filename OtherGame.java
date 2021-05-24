@@ -21,7 +21,7 @@ import javax.swing.JTextField;
 public class OtherGame extends JPanel
 {
 
-    JButton        sq1, sq2, sq3, sq4;
+    JButton sq1, sq2, sq3, sq4;
     Random rand = new Random();
     float r1 = (float)(rand.nextFloat() / 2f + 0.5);
     float g1 = (float)(rand.nextFloat() / 2f + 0.5);
@@ -35,7 +35,8 @@ public class OtherGame extends JPanel
     float g2 = (float)(rand.nextFloat() / 2f + 0.5);
     float b2 = (float)(rand.nextFloat() / 2f + 0.5);
 
-    int count = 0;
+    int score = 0;
+    int clicks = 0;
 
     public OtherGame() {
         sq1 = new JButton();
@@ -54,12 +55,21 @@ public class OtherGame extends JPanel
 
         setLayout(null);
 
-        firstLevel();
+        if(Driver.getGame2State()==1) sq1.setBackground(diffColor);
+        else sq1.setBackground(randomColor);
+
+        if(Driver.getGame2State()==2) sq2.setBackground(diffColor);
+        else sq2.setBackground(randomColor);
+
+        if(Driver.getGame2State()==3) sq3.setBackground(diffColor);
+        else sq3.setBackground(randomColor);
+
+        if(Driver.getGame2State()==4) sq4.setBackground(diffColor);
+        else sq4.setBackground(randomColor);
 
         setBounds(0, 20, 800, 600);
         result = new JTextField(16);
         result.setBounds(350, 350, 100, 30);
-
 
         //if random number is 1
         sq1.addActionListener(new ActionListener() {
@@ -71,11 +81,19 @@ public class OtherGame extends JPanel
                     result.setText("Correct!");
                     Driver.generateGame2State();
                     nextLevel();
+                    score++;
+                    clicks++;
 
                 }
                 else
                 {
                     result.setText("Incorrect.");
+                    clicks++;
+
+                }
+                if(clicks == 20) {
+
+                    Driver.setPage(3);
                 }
             }
         });
@@ -91,11 +109,19 @@ public class OtherGame extends JPanel
                     result.setText("Correct!");
                     Driver.generateGame2State();
                     nextLevel();
+                    score++;
+                    clicks++;
 
                 }
                 else
                 {
                     result.setText("Incorrect.");
+                    clicks++;
+
+                }
+                if(clicks == 20) {
+
+                    Driver.setPage(3);
                 }
             }
         });
@@ -111,11 +137,19 @@ public class OtherGame extends JPanel
                     result.setText("Correct!");
                     Driver.generateGame2State();
                     nextLevel();
+                    score++;
+                    clicks++;
 
                 }
                 else
                 {
                     result.setText("Incorrect.");
+                    clicks++;
+
+                }
+                if(clicks == 20) {
+
+                    Driver.setPage(3);
                 }
             }
         });
@@ -131,10 +165,19 @@ public class OtherGame extends JPanel
                     result.setText("Correct!");
                     Driver.generateGame2State();
                     nextLevel();
+                    score++;
+                    clicks++;
+
                 }
                 else
                 {
                     result.setText("Incorrect.");
+                    clicks++;
+
+                }
+                if(clicks == 20) {
+
+                    Driver.setPage(3);
                 }
             }
         });
@@ -152,8 +195,9 @@ public class OtherGame extends JPanel
 
 
 
-    }
 
+    }
+/*
     public void firstLevel() {
 
         Driver.generateGame2State();
@@ -172,8 +216,10 @@ public class OtherGame extends JPanel
 
         this.repaint();
 
-    }
+        nextLevel();
 
+    }
+*/
     public void nextLevel(){
 
 

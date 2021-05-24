@@ -21,6 +21,13 @@ public class Driver
     private static int game1state = num1to9();
     private static int game2state = num1to4();
 
+    static ButtonPanel bp = new ButtonPanel();
+    static NumGen ng = new NumGen();
+    static MainMenu menu = new MainMenu();
+    static TopMenu topMenu = new TopMenu();
+    static OtherGame game2 = new OtherGame();
+    static EndScreen end = new EndScreen();
+
     static volatile int page = 0;
 
     private static int num1to9() { //rename to num1to9
@@ -55,13 +62,12 @@ public class Driver
 
     }
 
-    public Driver() throws InterruptedException {
+    public static void game1Erase() {
+        bp.removeAll();
+        ng.removeAll();
+    }
 
-        ButtonPanel bp = new ButtonPanel();
-        NumGen ng = new NumGen();
-        MainMenu menu = new MainMenu();
-        TopMenu topMenu = new TopMenu();
-        OtherGame game2 = new OtherGame();
+    public Driver() throws InterruptedException {
 
         //runs the frame, which has both the "buttonPanel" and "NumGen" panels
         JFrame frame = new JFrame();
@@ -96,6 +102,11 @@ public class Driver
                     case 2:
                         frame.getContentPane().add(topMenu, BorderLayout.NORTH);
                         frame.getContentPane().add(game2);
+                        System.out.println(getGame2State());
+                        break;
+
+                    case 3:
+                        frame.getContentPane().add(end, BorderLayout.CENTER);
                         break;
 
                 }
