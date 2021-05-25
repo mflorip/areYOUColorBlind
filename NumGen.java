@@ -18,11 +18,10 @@ public class NumGen extends JPanel
     Color randomColor;
     Color bgColor;
 
-
     public void paintComponent(Graphics g) {
 
-        randomColor = new Color(166, 31 ,27);
-        bgColor = new Color(57,126, 42);
+        randomColor = new Color(r1, g1, b1);
+        bgColor = new Color(r2, g2, b2);
 
         super.paintComponent(g);
         this.setBackground(Color.GREEN);

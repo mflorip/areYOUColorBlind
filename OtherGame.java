@@ -1,12 +1,15 @@
 package iColor;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -26,10 +29,11 @@ public class OtherGame extends JPanel
     float r1 = (float)(rand.nextFloat() / 2f + 0.5);
     float g1 = (float)(rand.nextFloat() / 2f + 0.5);
     float b1 = (float)(rand.nextFloat() / 2f + 0.5);
-    JTextField     result;
+    JLabel     result;
     Color randomColor  = new Color(r1, g1, b1);
     Color diffColor = brighten(randomColor, 0.1);;
     Color bgColor;
+    GridBagConstraints con;
 
     float r2 = (float)(rand.nextFloat() / 2f + 0.5);
     float g2 = (float)(rand.nextFloat() / 2f + 0.5);
@@ -67,9 +71,13 @@ public class OtherGame extends JPanel
         if(Driver.getGame2State()==4) sq4.setBackground(diffColor);
         else sq4.setBackground(randomColor);
 
+        con = new GridBagConstraints();
+
+
         setBounds(0, 20, 800, 600);
-        result = new JTextField(16);
-        result.setBounds(350, 350, 100, 30);
+        result = new JLabel("Your Score: " + score);
+        result.setFont(new Font("Arial",1,30));
+        result.setForeground(Color.BLACK);
 
         //if random number is 1
         sq1.addActionListener(new ActionListener() {
@@ -88,10 +96,11 @@ public class OtherGame extends JPanel
                 else
                 {
                     result.setText("Incorrect.");
+                    result.paintImmediately(result.getVisibleRect());
                     clicks++;
 
                 }
-                if(clicks == 20) {
+                if(clicks == 14) {
 
                     Driver.setPage(3);
                 }
@@ -116,10 +125,11 @@ public class OtherGame extends JPanel
                 else
                 {
                     result.setText("Incorrect.");
+                    result.paintImmediately(result.getVisibleRect());
                     clicks++;
 
                 }
-                if(clicks == 20) {
+                if(clicks == 14) {
 
                     Driver.setPage(3);
                 }
@@ -144,10 +154,11 @@ public class OtherGame extends JPanel
                 else
                 {
                     result.setText("Incorrect.");
+                    result.paintImmediately(result.getVisibleRect());
                     clicks++;
 
                 }
-                if(clicks == 20) {
+                if(clicks == 14) {
 
                     Driver.setPage(3);
                 }
@@ -172,10 +183,11 @@ public class OtherGame extends JPanel
                 else
                 {
                     result.setText("Incorrect.");
+                    result.paintImmediately(result.getVisibleRect());
                     clicks++;
 
                 }
-                if(clicks == 20) {
+                if(clicks == 14) {
 
                     Driver.setPage(3);
                 }
@@ -191,35 +203,16 @@ public class OtherGame extends JPanel
         add(sq2);
         add(sq3);
         add(sq4);
-        add(result);
 
+        con.gridx = 1;
+        con.gridy = 3;
+        add(result, con);
 
+        result.setVisible(true);
 
 
     }
-/*
-    public void firstLevel() {
 
-        Driver.generateGame2State();
-
-        if(Driver.getGame2State()==1) sq1.setBackground(diffColor);
-        else sq1.setBackground(randomColor);
-
-        if(Driver.getGame2State()==2) sq2.setBackground(diffColor);
-        else sq2.setBackground(randomColor);
-
-        if(Driver.getGame2State()==3) sq3.setBackground(diffColor);
-        else sq3.setBackground(randomColor);
-
-        if(Driver.getGame2State()==4) sq4.setBackground(diffColor);
-        else sq4.setBackground(randomColor);
-
-        this.repaint();
-
-        nextLevel();
-
-    }
-*/
     public void nextLevel(){
 
 
