@@ -7,55 +7,70 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- *  Write a one-sentence summary of your class here.
- *  Follow it with additional details about its purpose, what abstraction
- *  it represents, and how to use it.
+ * Write a one-sentence summary of your class here. Follow it with additional
+ * details about its purpose, what abstraction it represents, and how to use it.
  *
- *  @author michaelflorip
- *  @version May 10, 2021
+ * @author michaelflorip
+ * @version May 10, 2021
  */
 public class Driver
 {
 
-    private static final Random rand1 = new Random();
-    private static int game1state = num1to9();
-    private static int game2state = num1to4();
+    private static final Random rand1      = new Random();
+    private static int          game1state = num1to9();
+    private static int          game2state = num1tonine();
 
-    static volatile int page = 0;
+    static volatile int         page       = 0;
 
-    private static int num1to9() { //rename to num1to9
+    private static int num1to9()
+    { // rename to num1to9
         int num1 = rand1.nextInt(9) + 1;
         return num1;
     }
 
-    private static int num1to4() { //rename to num1to9
-        int num2 = rand1.nextInt(4) + 1;
+
+    private static int num1tonine()
+    { // rename to num1to9
+        int num2 = rand1.nextInt(9) + 1;
         return num2;
     }
 
-    public static void generateGame1State() {
+
+    public static void generateGame1State()
+    {
         game1state = num1to9();
     }
 
-    public static void generateGame2State() {
-        game2state = num1to4();
+
+    public static void generateGame2State()
+    {
+        game2state = num1tonine();
     }
 
-    public static int getGame1State() {
+
+    public static int getGame1State()
+    {
         return game1state;
     }
 
-    public static int getGame2State() {
+
+    public static int getGame2State()
+    {
         return game2state;
     }
 
-    public static void setPage(int p) {
+
+    public static void setPage(int p)
+    {
 
         page = p;
 
     }
 
-    public Driver() throws InterruptedException {
+
+    public Driver()
+        throws InterruptedException
+    {
 
         ButtonPanel bp = new ButtonPanel();
         NumGen ng = new NumGen();
@@ -64,8 +79,7 @@ public class Driver
         OtherGame game2 = new OtherGame();
         EndScreen end = new EndScreen();
 
-
-        //runs the frame, which has both the "buttonPanel" and "NumGen" panels
+        // runs the frame, which has both the "buttonPanel" and "NumGen" panels
         JFrame frame = new JFrame();
         frame.setVisible(true);
         frame.setSize(1200, 600);
@@ -76,14 +90,17 @@ public class Driver
 
         int prevPage = -1;
 
-        while(true) {
+        while (true)
+        {
 
-            if(page != prevPage) {
+            if (page != prevPage)
+            {
 
                 prevPage = page;
                 frame.getContentPane().removeAll();
 
-                switch(page) {
+                switch (page)
+                {
 
                     case 0:
                         frame.getContentPane().add(menu, BorderLayout.CENTER);
@@ -114,7 +131,9 @@ public class Driver
         }
     }
 
-    public static void main(String[] args) throws InterruptedException
+
+    public static void main(String[] args)
+        throws InterruptedException
     {
         new Driver();
 

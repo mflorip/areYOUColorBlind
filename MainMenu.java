@@ -24,8 +24,6 @@ public class MainMenu extends JPanel
     JButton game2;
     JButton quit;
 
-    JLabel welcome;
-
     Random rand = new Random();
     float r1 = (float)(rand.nextFloat() / 2f + 0.5);
     float g1 = (float)(rand.nextFloat() / 2f + 0.5);
@@ -40,10 +38,6 @@ public class MainMenu extends JPanel
         setBackground(randomColor);
 
         this.setLayout(null);
-
-        welcome = new JLabel("Are You Color Blind?", JLabel.CENTER);
-        welcome.setFont(new Font("Arial",1,40));
-        welcome.setForeground(Color.BLACK);
 
         game1 = new JButton("GAME 1");
         game2 = new JButton("GAME 2");
@@ -71,16 +65,13 @@ public class MainMenu extends JPanel
         game2.setFont(new Font("Arial", Font.BOLD, 20));
         quit.setFont(new Font("Arial", Font.BOLD, 20));
 
-        game1.setBounds(340, 250, 130, 40);
-        game2.setBounds(340, 325, 130, 40);
-        quit.setBounds(340, 400, 130, 40);
+        game1.setBounds(535, 300, 130, 40);
+        game2.setBounds(535, 375, 130, 40);
+        quit.setBounds(535, 450, 130, 40);
 
         add(game1);
         add(game2);
         add(quit);
-        add(welcome);
-
-        show();
 
         //detecting actions for play game 1
         game1.addActionListener(new ActionListener() {
@@ -113,6 +104,10 @@ public class MainMenu extends JPanel
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
         g.setFont(new Font("Arial", Font.BOLD, 50));
-        g.drawString("Are YOU Color Blind?", 145, 200);
+        g.drawString("Are YOU Color Blind?", 330, 200);
+
+        g.setFont(new Font("Arial", Font.BOLD, 20));
+        g.drawString("Color Blindness Tester", 480, 260);
+
     }
 }

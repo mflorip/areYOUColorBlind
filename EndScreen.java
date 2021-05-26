@@ -26,19 +26,48 @@ public class EndScreen extends JPanel
     JLabel title, result, score1;
 
     public EndScreen() {
-        title = new JLabel("What Do Your Scores Mean?", JLabel.CENTER);
-        title.setFont(new Font("Arial",1,40));
-        title.setForeground(Color.BLACK);
 
-        result = new JLabel("If you received a score of:");
-        result.setFont(new Font("Arial",1,30));
-        result.setForeground(Color.BLACK);
-        result.setBounds(150, 150, 100, 40);
+        JButton quit = new JButton("QUIT");
+        this.setLayout(null);
 
-        score1 = new JLabel("Less than 12");
 
-        add(title);
-        add(result);
+        quit.setBackground(Color.BLACK);
+        quit.setContentAreaFilled(true);
+        quit.setForeground(Color.WHITE);
+        quit.setBorderPainted(false);
+        quit.setOpaque(true);
+
+        quit.setFont(new Font("Arial", Font.BOLD, 20));
+
+        quit.setBounds(555, 450, 130, 40);
+
+        add(quit);
+
+        quit.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e)
+            {
+                System.exit(0);
+            }
+        });
+
+
+    }
+
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
+        g.setFont(new Font("Arial", Font.BOLD, 50));
+        g.drawString("What Does My Score Mean?", 250, 100);
+
+        g.setFont(new Font("Arial", Font.BOLD, 30));
+        g.drawString("If you received a score...", 450, 220);
+
+        g.setFont(new Font("Arial", Font.BOLD, 20));
+
+        g.drawString("Less than 8    -    Your score indicates you have serious color vision deficiency. ", 250, 330);
+
+        g.drawString("8 to 12    -    Your score may indicate you have some color vision deficiency. ", 295, 370);
+
+        g.drawString("12 to 14    -    Your score indicates normal color vision. ", 284, 410);
 
     }
 

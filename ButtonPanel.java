@@ -9,8 +9,7 @@ import javax.swing.*;
 public class ButtonPanel extends JPanel
 {
     //things
-    JTextField result;
-    JTextField myScore;
+    JTextPane myScore;
     JButton goTo;
     //los buttons
     JButton b1, b2, b3, b4, b5, b6, b7, b8, b9;
@@ -34,9 +33,7 @@ public class ButtonPanel extends JPanel
         goTo = new JButton("What Does My Score Mean?");
         goTo.setBounds(600, 200, 50, 30);
 
-        result= new JTextField();
-        myScore = new JTextField();
-        result.setBounds(450, 350, 30, 20);
+        myScore = new JTextPane();
         setLayout(new GridLayout(4, 3));
 
         //setting background of panel
@@ -105,26 +102,27 @@ public class ButtonPanel extends JPanel
         con.gridy = 3;
         add(myScore, con);
 
-        con.gridx = 3;
-        add(goTo, con);
-
         //detecting actions for button 1
         b1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
                 if (Driver.getGame1State() == 1)
                 {
-                    result.setText("  Correct!");
+
                     Driver.generateGame1State();
                     score++;
                     total++;
-                    myScore.setText("  Score:  " + score);
+                    myScore.setText("  SCORE:  " + score);
+
+
+
+
                     prog.setValue(prog.getValue()+10);
 
                 }
                 else
                 {
-                    result.setText("  Incorrect.");
+
 
                     total++;
 
@@ -132,7 +130,6 @@ public class ButtonPanel extends JPanel
 
                 if(total == 14) {
 
-                    result.setText("Your score: " + score + "/" + 20);
                     remove(b1);
                     remove(b2);
                     remove(b3);
@@ -142,6 +139,8 @@ public class ButtonPanel extends JPanel
                     remove(b7);
                     remove(b8);
                     remove(b9);
+
+                    add(goTo);
 
                 }
 
@@ -155,10 +154,12 @@ public class ButtonPanel extends JPanel
 
                 if (Driver.getGame1State() == 2)
                 {
-                    result.setText("  Correct!");
+
                     Driver.generateGame1State();
                     score++;
-                    myScore.setText("  Score:  " + score);
+                    myScore.setText("  SCORE:  " + score);
+
+
                     prog.setValue(prog.getValue()+10);
                     total++;
 
@@ -166,14 +167,14 @@ public class ButtonPanel extends JPanel
                 }
                 else
                 {
-                    result.setText("  Incorrect.");
+
                     total++;
 
                 }
 
                 if(total == 14) {
 
-                    result.setText("Your score: " + score + "/" + 20);
+
                     remove(b1);
                     remove(b2);
                     remove(b3);
@@ -183,6 +184,8 @@ public class ButtonPanel extends JPanel
                     remove(b7);
                     remove(b8);
                     remove(b9);
+
+                    add(goTo);
 
                 }
 
@@ -196,24 +199,28 @@ public class ButtonPanel extends JPanel
 
                 if (Driver.getGame1State() == 3)
                 {
-                    result.setText("  Correct!");
+
                     Driver.generateGame1State();
                     score++;
-                    myScore.setText("  Score:  " + score);
+                    myScore.setText("  SCORE:  " + score);
+
+
+
+
                     prog.setValue(prog.getValue()+10);
                     total++;
 
                 }
                 else
                 {
-                    result.setText("  Incorrect.");
+
                     total++;
 
                 }
 
                 if(total == 14) {
 
-                    result.setText("Your score: " + score + "/" + 20);
+
                     remove(b1);
                     remove(b2);
                     remove(b3);
@@ -223,6 +230,8 @@ public class ButtonPanel extends JPanel
                     remove(b7);
                     remove(b8);
                     remove(b9);
+
+                    add(goTo);
 
                 }
 
@@ -236,10 +245,13 @@ public class ButtonPanel extends JPanel
 
                 if (Driver.getGame1State() == 4)
                 {
-                    result.setText("  Correct!");
+
                     Driver.generateGame1State();
                     score++;
-                    myScore.setText("  Score:  " + score);
+                    myScore.setText("  SCORE:  " + score);
+
+
+
 
                     prog.setValue(prog.getValue()+10);
                     total++;
@@ -247,7 +259,7 @@ public class ButtonPanel extends JPanel
                 }
                 else
                 {
-                    result.setText("  Incorrect.");
+
 
                     total++;
 
@@ -255,7 +267,7 @@ public class ButtonPanel extends JPanel
 
                 if(total == 14) {
 
-                    result.setText("Your score: " + score + "/" + 20);
+
                     remove(b1);
                     remove(b2);
                     remove(b3);
@@ -265,6 +277,8 @@ public class ButtonPanel extends JPanel
                     remove(b7);
                     remove(b8);
                     remove(b9);
+
+                    add(goTo);
 
                 }
 
@@ -278,17 +292,21 @@ public class ButtonPanel extends JPanel
 
                 if (Driver.getGame1State() == 5)
                 {
-                    result.setText("  Correct!");
+
                     Driver.generateGame1State();
                     score++;
-                    myScore.setText("  Score:  " + score);
+                    myScore.setText("  SCORE:  " + score);
+
+
+
+
                     prog.setValue(prog.getValue()+10);
                     total++;
 
                 }
                 else
                 {
-                    result.setText("  Incorrect.");
+
 
                     total++;
 
@@ -296,7 +314,7 @@ public class ButtonPanel extends JPanel
 
                 if(total == 14) {
 
-                    result.setText("Your score: " + score + "/" + 20);
+
                     remove(b1);
                     remove(b2);
                     remove(b3);
@@ -306,6 +324,8 @@ public class ButtonPanel extends JPanel
                     remove(b7);
                     remove(b8);
                     remove(b9);
+
+                    add(goTo);
 
                 }
 
@@ -319,10 +339,14 @@ public class ButtonPanel extends JPanel
 
                 if (Driver.getGame1State() == 6)
                 {
-                    result.setText("  Correct!");
+
                     Driver.generateGame1State();
                     score++;
-                    myScore.setText("  Score:  " + score);
+                    myScore.setText("  SCORE:  " + score);
+
+
+
+
                     prog.setValue(prog.getValue()+10);
                     total++;
 
@@ -330,14 +354,14 @@ public class ButtonPanel extends JPanel
                 }
                 else
                 {
-                    result.setText("  Incorrect.");
+
                     total++;
 
                 }
 
                 if(total == 14) {
 
-                    result.setText("Your score: " + score + "/" + 20);
+
                     remove(b1);
                     remove(b2);
                     remove(b3);
@@ -347,6 +371,8 @@ public class ButtonPanel extends JPanel
                     remove(b7);
                     remove(b8);
                     remove(b9);
+
+                    add(goTo);
 
                 }
 
@@ -359,10 +385,14 @@ public class ButtonPanel extends JPanel
             {
                 if (Driver.getGame1State() == 7)
                 {
-                    result.setText("  Correct!");
+
                     Driver.generateGame1State();
                     score++;
-                    myScore.setText("  Score:  " + score);
+                    myScore.setText("  SCORE:  " + score);
+
+
+
+
                     prog.setValue(prog.getValue()+10);
                     total++;
 
@@ -370,14 +400,14 @@ public class ButtonPanel extends JPanel
                 }
                 else
                 {
-                    result.setText("  Incorrect.");
+
                     total++;
 
                 }
 
                 if(total == 14) {
 
-                    result.setText("Your score: " + score + "/" + 20);
+
                     remove(b1);
                     remove(b2);
                     remove(b3);
@@ -387,6 +417,8 @@ public class ButtonPanel extends JPanel
                     remove(b7);
                     remove(b8);
                     remove(b9);
+
+                    add(goTo);
 
                 }
 
@@ -399,11 +431,13 @@ public class ButtonPanel extends JPanel
             {
                 if (Driver.getGame1State() == 8)
                 {
-                    result.setText("  Correct!");
+
                     Driver.generateGame1State();
 
                     score++;
-                    myScore.setText("  Score:  " + score);
+                    myScore.setText("  SCORE:  " + score);
+
+
                     prog.setValue(prog.getValue()+10);
                     total++;
 
@@ -411,7 +445,7 @@ public class ButtonPanel extends JPanel
                 }
                 else
                 {
-                    result.setText("  Incorrect.");
+
 
                     total++;
 
@@ -419,7 +453,7 @@ public class ButtonPanel extends JPanel
 
                 if(total == 14) {
 
-                    result.setText("Your score: " + score + "/" + 20);
+
                     remove(b1);
                     remove(b2);
                     remove(b3);
@@ -429,6 +463,8 @@ public class ButtonPanel extends JPanel
                     remove(b7);
                     remove(b8);
                     remove(b9);
+
+                    add(goTo);
 
                 }
             }
@@ -440,23 +476,23 @@ public class ButtonPanel extends JPanel
             {
                 if (Driver.getGame1State() == 9)
                 {
-                    result.setText("  Correct!");
+
                     Driver.generateGame1State();
                     score++;
-                    myScore.setText("  Score:  " + score);
+                    myScore.setText("  SCORE:  " + score);
+
                     prog.setValue(prog.getValue()+10);
                     total++;
 
                 }
                 else
                 {
-                    result.setText("  Incorrect.");
+
                     total++;
                 }
 
                 if(total == 14) {
 
-                    result.setText("Your score: " + score + "/" + 20);
                     remove(b1);
                     remove(b2);
                     remove(b3);
@@ -466,6 +502,8 @@ public class ButtonPanel extends JPanel
                     remove(b7);
                     remove(b8);
                     remove(b9);
+
+                    add(goTo);
 
                 }
 
