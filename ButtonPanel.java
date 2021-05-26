@@ -21,14 +21,15 @@ public class ButtonPanel extends JPanel
 
     int total = 0;
 
-
     JPanel scoNProg;
 
 
     public  ButtonPanel() {
+
+
         setBounds(10, 150, 200, 300);
 
-        prog = new JProgressBar(0, 200);
+        prog = new JProgressBar(0, 14);
 
         goTo = new JButton("What Does My Score Mean?");
         goTo.setBounds(600, 200, 50, 30);
@@ -37,7 +38,6 @@ public class ButtonPanel extends JPanel
         setLayout(new GridLayout(4, 3));
 
         //setting background of panel
-        setBackground(Color.BLACK);
         setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         b1 = new JButton ("1");
@@ -60,6 +60,15 @@ public class ButtonPanel extends JPanel
         b7.setFont(new Font("Arial", Font.BOLD, 40));
         b8.setFont(new Font("Arial", Font.BOLD, 40));
         b9.setFont(new Font("Arial", Font.BOLD, 40));
+
+        goTo.setBackground(Color.BLACK);
+        goTo.setContentAreaFilled(true);
+        goTo.setForeground(Color.WHITE);
+        goTo.setBorderPainted(false);
+        goTo.setOpaque(true);
+
+        goTo.setFont(new Font("Arial", Font.BOLD, 20));
+        goTo.setBounds(600, 50, 130, 40);
 
         GridBagConstraints con = new GridBagConstraints();
 
@@ -106,6 +115,7 @@ public class ButtonPanel extends JPanel
         b1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
+
                 if (Driver.getGame1State() == 1)
                 {
 
@@ -114,10 +124,7 @@ public class ButtonPanel extends JPanel
                     total++;
                     myScore.setText("  SCORE:  " + score);
 
-
-
-
-                    prog.setValue(prog.getValue()+10);
+                    prog.setValue(prog.getValue()+1);
 
                 }
                 else
@@ -160,7 +167,8 @@ public class ButtonPanel extends JPanel
                     myScore.setText("  SCORE:  " + score);
 
 
-                    prog.setValue(prog.getValue()+10);
+                    prog.setValue(prog.getValue()+1);
+
                     total++;
 
 
@@ -200,6 +208,7 @@ public class ButtonPanel extends JPanel
                 if (Driver.getGame1State() == 3)
                 {
 
+
                     Driver.generateGame1State();
                     score++;
                     myScore.setText("  SCORE:  " + score);
@@ -207,7 +216,8 @@ public class ButtonPanel extends JPanel
 
 
 
-                    prog.setValue(prog.getValue()+10);
+                    prog.setValue(prog.getValue()+1);
+
                     total++;
 
                 }
@@ -246,6 +256,7 @@ public class ButtonPanel extends JPanel
                 if (Driver.getGame1State() == 4)
                 {
 
+
                     Driver.generateGame1State();
                     score++;
                     myScore.setText("  SCORE:  " + score);
@@ -253,7 +264,8 @@ public class ButtonPanel extends JPanel
 
 
 
-                    prog.setValue(prog.getValue()+10);
+                    prog.setValue(prog.getValue()+1);
+
                     total++;
 
                 }
@@ -300,7 +312,8 @@ public class ButtonPanel extends JPanel
 
 
 
-                    prog.setValue(prog.getValue()+10);
+                    prog.setValue(prog.getValue()+1);
+
                     total++;
 
                 }
@@ -340,6 +353,7 @@ public class ButtonPanel extends JPanel
                 if (Driver.getGame1State() == 6)
                 {
 
+
                     Driver.generateGame1State();
                     score++;
                     myScore.setText("  SCORE:  " + score);
@@ -347,7 +361,8 @@ public class ButtonPanel extends JPanel
 
 
 
-                    prog.setValue(prog.getValue()+10);
+                    prog.setValue(prog.getValue()+1);
+
                     total++;
 
 
@@ -386,6 +401,7 @@ public class ButtonPanel extends JPanel
                 if (Driver.getGame1State() == 7)
                 {
 
+
                     Driver.generateGame1State();
                     score++;
                     myScore.setText("  SCORE:  " + score);
@@ -393,7 +409,8 @@ public class ButtonPanel extends JPanel
 
 
 
-                    prog.setValue(prog.getValue()+10);
+                    prog.setValue(prog.getValue()+1);
+
                     total++;
 
 
@@ -429,6 +446,7 @@ public class ButtonPanel extends JPanel
         b8.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
+
                 if (Driver.getGame1State() == 8)
                 {
 
@@ -438,7 +456,8 @@ public class ButtonPanel extends JPanel
                     myScore.setText("  SCORE:  " + score);
 
 
-                    prog.setValue(prog.getValue()+10);
+                    prog.setValue(prog.getValue()+1);
+
                     total++;
 
 
@@ -481,7 +500,8 @@ public class ButtonPanel extends JPanel
                     score++;
                     myScore.setText("  SCORE:  " + score);
 
-                    prog.setValue(prog.getValue()+10);
+                    prog.setValue(prog.getValue()+1);
+
                     total++;
 
                 }
@@ -519,6 +539,7 @@ public class ButtonPanel extends JPanel
 
             }
         });
+
 
 
     }

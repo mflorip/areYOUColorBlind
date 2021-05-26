@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 public class Driver
 {
 
+
     private static final Random rand1      = new Random();
     private static int          game1state = num1to9();
     private static int          game2state = num1tonine();
@@ -47,18 +48,15 @@ public class Driver
         game2state = num1tonine();
     }
 
-
     public static int getGame1State()
     {
         return game1state;
     }
 
-
     public static int getGame2State()
     {
         return game2state;
     }
-
 
     public static void setPage(int p)
     {
@@ -66,7 +64,6 @@ public class Driver
         page = p;
 
     }
-
 
     public Driver()
         throws InterruptedException
@@ -82,7 +79,7 @@ public class Driver
         // runs the frame, which has both the "buttonPanel" and "NumGen" panels
         JFrame frame = new JFrame();
         frame.setVisible(true);
-        frame.setSize(1200, 600);
+        frame.setSize(1000, 600);
         frame.setLayout(new BorderLayout());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);

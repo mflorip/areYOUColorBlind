@@ -9,9 +9,6 @@ public class NumGen
 {
 
     Random rand = new Random();
-    float  r1   = (float)(rand.nextFloat() / 2f + 0.5);
-    float  g1   = (float)(rand.nextFloat() / 2f + 0.5);
-    float  b1   = (float)(rand.nextFloat() / 2f + 0.5);
 
     float  r2   = (float)(rand.nextFloat() / 2f + 0.5);
     float  g2   = (float)(rand.nextFloat() / 2f + 0.5);
@@ -22,8 +19,8 @@ public class NumGen
     public void paintComponent(Graphics g)
     {
 
-        randomColor = new Color(r1, g1, b1);
         bgColor = new Color(r2, g2, b2);
+        randomColor = brighten(bgColor, 0.05);
 
         super.paintComponent(g);
         this.setBackground(Color.GREEN);
@@ -262,6 +259,18 @@ public class NumGen
             g2d.setPaint(randomColor);
             g2d.fillRect(230, 215, 100, 30);
         }
+
+    }
+
+    public static Color brighten(Color color, double fraction) {
+
+        int red = (int) Math.round(Math.min(255, color.getRed() + 255 * fraction));
+        int green = (int) Math.round(Math.min(255, color.getGreen() + 255 * fraction));
+        int blue = (int) Math.round(Math.min(255, color.getBlue() + 255 * fraction));
+
+        int alpha = color.getAlpha();
+
+        return new Color(red, green, blue, alpha);
 
     }
 

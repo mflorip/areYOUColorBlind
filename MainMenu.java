@@ -39,9 +39,9 @@ public class MainMenu extends JPanel
 
         this.setLayout(null);
 
-        game1 = new JButton("GAME 1");
-        game2 = new JButton("GAME 2");
-        quit = new JButton("QUIT");
+        game1 = new JButton("Num Dumb");
+        game2 = new JButton("Odd Color Out");
+        quit = new JButton("Quit");
 
         game1.setBackground(Color.BLACK);
         game1.setContentAreaFilled(true);
@@ -65,9 +65,9 @@ public class MainMenu extends JPanel
         game2.setFont(new Font("Arial", Font.BOLD, 20));
         quit.setFont(new Font("Arial", Font.BOLD, 20));
 
-        game1.setBounds(535, 300, 130, 40);
-        game2.setBounds(535, 375, 130, 40);
-        quit.setBounds(535, 450, 130, 40);
+        game1.setBounds(375, 300, 230, 40);
+        game2.setBounds(375, 375, 230, 40);
+        quit.setBounds(375, 450, 230, 40);
 
         add(game1);
         add(game2);
@@ -104,10 +104,10 @@ public class MainMenu extends JPanel
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
         g.setFont(new Font("Arial", Font.BOLD, 50));
-        g.drawString("Are YOU Color Blind?", 330, 200);
+        g.drawString("Are YOU Color Blind?", 220, 200);
 
         g.setFont(new Font("Arial", Font.BOLD, 20));
-        g.drawString("Color Blindness Tester", 480, 260);
+        g.drawString("Color Vision Tester", 400, 260);
 
     }
 }
