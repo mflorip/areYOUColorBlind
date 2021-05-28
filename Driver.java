@@ -1,4 +1,4 @@
-package iColor;
+package funMode;
 
 import java.awt.BorderLayout;
 import java.util.Random;
@@ -71,11 +71,17 @@ public class Driver
         diffColor = brighten(randomColor, 0.05);
         game2state = num1tonine();
     }
-
+    /**
+     * gets randomColor for background
+     * @return randomColor for background
+     */
     public static Color getRandColor() {
         return randomColor;
     }
-
+    /**
+     * gets randomColor for number
+     * @return randomColor for number
+     */
     public static Color getDiffColor() {
         return diffColor;
     }
