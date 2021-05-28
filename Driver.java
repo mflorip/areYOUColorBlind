@@ -18,14 +18,13 @@ public class Driver
     private static int          game1state  = num1to9();
     private static int          game2state  = num1tonine();
 
-    //private static Color[] primaryColors = new Color[5];
+    private static Color[] primaryColors = {new Color(92, 231, 0), new Color(254, 0, 0), new Color(43, 82, 255), new Color(201, 201, 201)};
+    private static Color[] pairColors = {new Color(254, 204, 1), new Color(97, 108, 0), new Color(218, 40, 226), new Color(4, 224, 224)};
 
-    private static Color        randomColor = new Color(
-        (float)(rand1.nextFloat() / 2f + 0.5),
-        (float)(rand1.nextFloat() / 2f + 0.5),
-        (float)(rand1.nextFloat() / 2f + 0.5));
+    private static int colorInd = genColorIndex();
 
-    private static Color        diffColor = brighten(randomColor, 0.05);
+    private static Color        randomColor = primaryColors[colorInd];
+    private static Color        diffColor = pairColors[colorInd];
     /**
      * sets the current page
      */
@@ -44,17 +43,20 @@ public class Driver
         return num2;
     }
 
+    private static int genColorIndex()
+    {
+        return rand1.nextInt(primaryColors.length);
+    }
+
 
     /**
      * generates random number 1-9 for game 1
      */
     public static void generateGame1State()
     {
-        randomColor = new Color(
-            (float)(rand1.nextFloat() / 2f + 0.5),
-            (float)(rand1.nextFloat() / 2f + 0.5),
-            (float)(rand1.nextFloat() / 2f + 0.5));
-        diffColor = brighten(randomColor, 0.05);
+        colorInd = genColorIndex();
+        randomColor = primaryColors[colorInd];
+        diffColor = pairColors[colorInd];
         game1state = num1to9();
     }
 
@@ -64,11 +66,9 @@ public class Driver
      */
     public static void generateGame2State()
     {
-        randomColor = new Color(
-            (float)(rand1.nextFloat() / 2f + 0.5),
-            (float)(rand1.nextFloat() / 2f + 0.5),
-            (float)(rand1.nextFloat() / 2f + 0.5));
-        diffColor = brighten(randomColor, 0.05);
+        colorInd = genColorIndex();
+        randomColor = primaryColors[colorInd];
+        diffColor = pairColors[colorInd];
         game2state = num1tonine();
     }
 
@@ -79,30 +79,6 @@ public class Driver
     public static Color getDiffColor() {
         return diffColor;
     }
-
-    /**
-     * brightens a color taken as a parameter
-     *
-     * @param color
-     *            parameter
-     * @param fraction
-     *            how much
-     * @return the new brightened color
-     */
-    public static Color brighten(Color color, double fraction)
-    {
-
-        int red = (int)Math.round(Math.min(255, color.getRed() + 255 * fraction));
-        int green = (int)Math.round(Math.min(255, color.getGreen() + 255 * fraction));
-        int blue = (int)Math.round(Math.min(255, color.getBlue() + 255 * fraction));
-
-        int alpha = color.getAlpha();
-
-        return new Color(red, green, blue, alpha);
-
-    }
-
-
 
     /**
      * returns random number 1-9 for game 1
