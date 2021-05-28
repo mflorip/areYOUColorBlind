@@ -147,10 +147,10 @@ public class DriverTest
     {
 
         ButtonPanel bp = new ButtonPanel();
-        NumGen ng = new NumGen();
+        NumGenTest ng = new NumGenTest();
         MainMenu menu = new MainMenu();
         TopMenu topMenu = new TopMenu();
-        OtherGame game2 = new OtherGame();
+        OtherGameTest game2 = new OtherGameTest();
         EndScreen end = new EndScreen();
 
         // runs the frame, which has both the "buttonPanel" and "NumGen" panels
