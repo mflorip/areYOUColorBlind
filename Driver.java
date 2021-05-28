@@ -1,4 +1,4 @@
-package iColor;
+package testingMode;
 
 import java.awt.BorderLayout;
 import java.util.Random;
@@ -14,21 +14,29 @@ import java.awt.Color;
 public class Driver
 {
 
-    private static final Random rand1       = new Random();
-    private static int          game1state  = num1to9();
-    private static int          game2state  = num1tonine();
+    private static final Random rand1         = new Random();
+    private static int          game1state    = num1to9();
+    private static int          game2state    = num1tonine();
 
-    private static Color[] primaryColors = {new Color(92, 231, 0), new Color(254, 0, 0), new Color(43, 82, 255), new Color(201, 201, 201)};
-    private static Color[] pairColors = {new Color(254, 204, 1), new Color(97, 108, 0), new Color(218, 40, 226), new Color(4, 224, 224)};
+    private static Color[]      primaryColors =
+        { new Color(92, 231, 0), new Color(254, 0, 0), new Color(43, 82, 255),
+            new Color(201, 201, 201), new Color(255, 194, 10), new Color(153, 79, 0),
+            new Color(255, 190, 106), new Color(230, 97, 0), new Color(26, 255, 26),
+            new Color(254, 254, 98), new Color(0, 90, 181), new Color(26, 133, 255) };
+    private static Color[]      pairColors    =
+        { new Color(254, 204, 1), new Color(97, 108, 0), new Color(218, 40, 226),
+            new Color(4, 224, 224), new Color(12, 123, 220), new Color(0, 108, 209),
+            new Color(64, 176, 166), new Color(93, 58, 155), new Color(75, 0, 146),
+            new Color(211, 95, 183), new Color(220, 50, 32), new Color(212, 17, 89) };
 
-    private static int colorInd = genColorIndex();
+    private static int          colorInd      = genColorIndex();
 
-    private static Color        randomColor = primaryColors[colorInd];
-    private static Color        diffColor = pairColors[colorInd];
+    private static Color        randomColor   = primaryColors[colorInd];
+    private static Color        diffColor     = pairColors[colorInd];
     /**
      * sets the current page
      */
-    static volatile int         page        = 0;
+    static volatile int         page          = 0;
 
     private static int num1to9()
     { // rename to num1to9
@@ -42,6 +50,7 @@ public class Driver
         int num2 = rand1.nextInt(9) + 1;
         return num2;
     }
+
 
     private static int genColorIndex()
     {
@@ -72,13 +81,24 @@ public class Driver
         game2state = num1tonine();
     }
 
-    public static Color getRandColor() {
+    /**
+     * gets randomColor for background
+     * @return randomColor for background
+     */
+    public static Color getRandColor()
+    {
         return randomColor;
     }
 
-    public static Color getDiffColor() {
+    /**
+     * gets randomColor for number
+     * @return randomColor for number
+     */
+    public static Color getDiffColor()
+    {
         return diffColor;
     }
+
 
     /**
      * returns random number 1-9 for game 1
