@@ -1,25 +1,31 @@
 package iColor;
 
 import java.awt.*;
-import java.util.Random;
 import javax.swing.JPanel;
 
+/**
+ * generates the number for num dumb game
+ *
+ * @author michaelflorip
+ * @version May 26, 2021
+ */
 public class NumGen
     extends JPanel
 {
 
-    Random rand = new Random();
-
-    float  r2   = (float)(rand.nextFloat() / 2f + 0.5);
-    float  g2   = (float)(rand.nextFloat() / 2f + 0.5);
-    float  b2   = (float)(rand.nextFloat() / 2f + 0.5);
+    /**
+     * randomColor object for number
+     */
     Color  randomColor;
+
+    /**
+     * randomColor object for background
+     */
     Color  bgColor;
 
     public void paintComponent(Graphics g)
     {
-
-        bgColor = new Color(r2, g2, b2);
+        bgColor = new Color(Driver.getG1Red(), Driver.getG1Green(), Driver.getG1Blue());
         randomColor = brighten(bgColor, 0.05);
 
         super.paintComponent(g);
@@ -32,7 +38,6 @@ public class NumGen
         g.drawString("Choose the number in the keypad that ", 40, 450);
         g.drawString("corresponds to the number shown above. ", 40, 480);
         g.drawString("You get 14 CLICKS for this game.", 40, 510);
-
 
         // if random number is 1
         if (Driver.getGame1State() == 1)
@@ -262,11 +267,22 @@ public class NumGen
 
     }
 
-    public static Color brighten(Color color, double fraction) {
 
-        int red = (int) Math.round(Math.min(255, color.getRed() + 255 * fraction));
-        int green = (int) Math.round(Math.min(255, color.getGreen() + 255 * fraction));
-        int blue = (int) Math.round(Math.min(255, color.getBlue() + 255 * fraction));
+    /**
+     * brightens a color taken as a parameter
+     *
+     * @param color
+     *            parameter
+     * @param fraction
+     *            how much
+     * @return the new brightened color
+     */
+    public static Color brighten(Color color, double fraction)
+    {
+
+        int red = (int)Math.round(Math.min(255, color.getRed() + 255 * fraction));
+        int green = (int)Math.round(Math.min(255, color.getGreen() + 255 * fraction));
+        int blue = (int)Math.round(Math.min(255, color.getBlue() + 255 * fraction));
 
         int alpha = color.getAlpha();
 

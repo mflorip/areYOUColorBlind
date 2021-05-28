@@ -8,19 +8,28 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 /**
- *  Write a one-sentence summary of your class here.
- *  Follow it with additional details about its purpose, what abstraction
- *  it represents, and how to use it.
+ * creates top menu that appears in both games
  *
- *  @author michaelflorip
- *  @version May 13, 2021
+ * @author michaelflorip
+ * @version May 13, 2021
  */
-public class TopMenu extends JPanel
+public class TopMenu
+    extends JPanel
 {
+    /**
+     * home button
+     */
     JButton home;
+    /**
+     * quit button
+     */
     JButton quit;
 
-    public TopMenu() {
+    /**
+     * Create a new TopMenu object.
+     */
+    public TopMenu()
+    {
 
         this.setBackground(Color.BLACK);
 
@@ -40,7 +49,6 @@ public class TopMenu extends JPanel
             }
         });
 
-
         quit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
@@ -48,8 +56,6 @@ public class TopMenu extends JPanel
             }
         });
 
-
     }
-
 
 }

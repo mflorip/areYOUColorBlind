@@ -3,38 +3,53 @@ package iColor;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 /**
- *  Write a one-sentence summary of your class here.
- *  Follow it with additional details about its purpose, what abstraction
- *  it represents, and how to use it.
+ * end screen class
  *
- *  @author michaelflorip
- *  @version May 23, 2021
+ * @author michaelflorip
+ * @version May 23, 2021
  */
-public class EndScreen extends JPanel
+public class EndScreen
+    extends JPanel
 {
 
-    JLabel title, result, score1;
+    /**
+     * title text
+     */
+    JLabel  title;
+    /**
+     * result text
+     */
+    JLabel  result;
+    /**
+     * score text
+     */
+    JLabel  score1;
+    /**
+     * home button
+     */
     JButton home;
+    /**
+     * quit button
+     */
     JButton quit;
 
-
-    public EndScreen() {
+    /**
+     * Create a new EndScreen object.
+     */
+    public EndScreen()
+    {
 
         quit = new JButton("QUIT");
         this.setLayout(null);
 
         home = new JButton("HOME");
-
 
         quit.setBackground(Color.BLACK);
         quit.setContentAreaFilled(true);
@@ -73,7 +88,9 @@ public class EndScreen extends JPanel
 
     }
 
-    public void paintComponent(Graphics g){
+
+    public void paintComponent(Graphics g)
+    {
         super.paintComponent(g);
         g.setFont(new Font("Arial", Font.BOLD, 50));
         g.drawString("What Does My Score Mean?", 170, 100);
@@ -83,16 +100,18 @@ public class EndScreen extends JPanel
 
         g.setFont(new Font("Arial", Font.BOLD, 20));
 
-        g.drawString("Less than 8    -    Your score indicates you have serious color vision deficiency. ", 170, 330);
+        g.drawString(
+            "Less than 8    -    Your score indicates you have serious color vision deficiency. ",
+            170,
+            330);
 
-        g.drawString("8 to 12    -    Your score may indicate you have some color vision deficiency. ", 215, 370);
+        g.drawString(
+            "8 to 12    -    Your score may indicate you have some color vision deficiency. ",
+            215,
+            370);
 
         g.drawString("12 to 14    -    Your score indicates normal color vision. ", 204, 410);
 
     }
-
-
-
-
 
 }

@@ -4,34 +4,58 @@ package iColor;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.*;
 import javax.swing.*;
+
 /**
- *  Write a one-sentence summary of your class here.
- *  Follow it with additional details about its purpose, what abstraction
- *  it represents, and how to use it.
+ * main menu class
  *
- *  @author michaelflorip
- *  @version May 12, 2021
+ * @author michaelflorip
+ * @version May 12, 2021
  */
-public class MainMenu extends JPanel
+public class MainMenu
+    extends JPanel
 {
+    /**
+     * num dumb game
+     */
     JButton game1;
+    /**
+     * odd color out
+     */
     JButton game2;
+    /**
+     * quit button
+     */
     JButton quit;
 
-    Random rand = new Random();
-    float r1 = (float)(rand.nextFloat() / 2f + 0.5);
-    float g1 = (float)(rand.nextFloat() / 2f + 0.5);
-    float b1 = (float)(rand.nextFloat() / 2f + 0.5);
+    /**
+     * random object
+     */
+    Random  rand = new Random();
+    /**
+     * random float
+     */
+    float   r1   = (float)(rand.nextFloat() / 2f + 0.5);
+    /**
+     * random float
+     */
+    float   g1   = (float)(rand.nextFloat() / 2f + 0.5);
+    /**
+     * random float
+     */
+    float   b1   = (float)(rand.nextFloat() / 2f + 0.5);
 
-    Color randomColor;
+    /**
+     * random Color object
+     */
+    Color   randomColor;
 
-    public MainMenu() {
+    /**
+     * Create a new MainMenu object.
+     */
+    public MainMenu()
+    {
 
         randomColor = new Color(r1, g1, b1);
 
@@ -73,7 +97,7 @@ public class MainMenu extends JPanel
         add(game2);
         add(quit);
 
-        //detecting actions for play game 1
+        // detecting actions for play game 1
         game1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
@@ -89,7 +113,6 @@ public class MainMenu extends JPanel
             }
         });
 
-
         quit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
@@ -97,11 +120,11 @@ public class MainMenu extends JPanel
             }
         });
 
-
     }
 
 
-    protected void paintComponent(Graphics g){
+    protected void paintComponent(Graphics g)
+    {
         super.paintComponent(g);
         g.setFont(new Font("Arial", Font.BOLD, 50));
         g.drawString("Are YOU Color Blind?", 220, 200);
