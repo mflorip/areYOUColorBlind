@@ -1,4 +1,4 @@
-package iColor;
+package funMode;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -45,7 +45,7 @@ public class TopMenu
         home.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
-                Driver.setPage(0);
+                DriverFun.setPage(0);
             }
         });
 

@@ -1,4 +1,4 @@
-package iColor;
+package funMode;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -178,10 +178,10 @@ public class ButtonPanel
             public void actionPerformed(ActionEvent e)
             {
 
-                if (Driver.getGame1State() == 1)
+                if (DriverFun.getGame1State() == 1)
                 {
 
-                    Driver.generateGame1State();
+                    DriverFun.generateGame1State();
                     score++;
                     total++;
                     myScore.setText("  SCORE:  " + score);
@@ -221,10 +221,10 @@ public class ButtonPanel
             public void actionPerformed(ActionEvent e)
             {
 
-                if (Driver.getGame1State() == 2)
+                if (DriverFun.getGame1State() == 2)
                 {
 
-                    Driver.generateGame1State();
+                    DriverFun.generateGame1State();
                     score++;
                     myScore.setText("  SCORE:  " + score);
 
@@ -265,10 +265,10 @@ public class ButtonPanel
             public void actionPerformed(ActionEvent e)
             {
 
-                if (Driver.getGame1State() == 3)
+                if (DriverFun.getGame1State() == 3)
                 {
 
-                    Driver.generateGame1State();
+                    DriverFun.generateGame1State();
                     score++;
                     myScore.setText("  SCORE:  " + score);
 
@@ -309,10 +309,10 @@ public class ButtonPanel
             public void actionPerformed(ActionEvent e)
             {
 
-                if (Driver.getGame1State() == 4)
+                if (DriverFun.getGame1State() == 4)
                 {
 
-                    Driver.generateGame1State();
+                    DriverFun.generateGame1State();
                     score++;
                     myScore.setText("  SCORE:  " + score);
 
@@ -353,10 +353,10 @@ public class ButtonPanel
             public void actionPerformed(ActionEvent e)
             {
 
-                if (Driver.getGame1State() == 5)
+                if (DriverFun.getGame1State() == 5)
                 {
 
-                    Driver.generateGame1State();
+                    DriverFun.generateGame1State();
                     score++;
                     myScore.setText("  SCORE:  " + score);
 
@@ -397,10 +397,10 @@ public class ButtonPanel
             public void actionPerformed(ActionEvent e)
             {
 
-                if (Driver.getGame1State() == 6)
+                if (DriverFun.getGame1State() == 6)
                 {
 
-                    Driver.generateGame1State();
+                    DriverFun.generateGame1State();
                     score++;
                     myScore.setText("  SCORE:  " + score);
 
@@ -440,10 +440,10 @@ public class ButtonPanel
         b7.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
-                if (Driver.getGame1State() == 7)
+                if (DriverFun.getGame1State() == 7)
                 {
 
-                    Driver.generateGame1State();
+                    DriverFun.generateGame1State();
                     score++;
                     myScore.setText("  SCORE:  " + score);
 
@@ -484,10 +484,10 @@ public class ButtonPanel
             public void actionPerformed(ActionEvent e)
             {
 
-                if (Driver.getGame1State() == 8)
+                if (DriverFun.getGame1State() == 8)
                 {
 
-                    Driver.generateGame1State();
+                    DriverFun.generateGame1State();
 
                     score++;
                     myScore.setText("  SCORE:  " + score);
@@ -527,10 +527,10 @@ public class ButtonPanel
         b9.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
-                if (Driver.getGame1State() == 9)
+                if (DriverFun.getGame1State() == 9)
                 {
 
-                    Driver.generateGame1State();
+                    DriverFun.generateGame1State();
                     score++;
                     myScore.setText("  SCORE:  " + score);
 
@@ -568,7 +568,7 @@ public class ButtonPanel
         goTo.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent j)
             {
-                Driver.setPage(3);
+                DriverFun.setPage(3);
 
             }
         });

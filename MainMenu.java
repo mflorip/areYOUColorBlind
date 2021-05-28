@@ -1,5 +1,5 @@
 
-package iColor;
+package funMode;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -101,15 +101,15 @@ public class MainMenu
         game1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
-                Driver.generateGame1State();
-                Driver.setPage(1);
+                DriverFun.generateGame1State();
+                DriverFun.setPage(1);
             }
         });
 
         game2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
-                Driver.setPage(2);
+                DriverFun.setPage(2);
             }
         });
 
