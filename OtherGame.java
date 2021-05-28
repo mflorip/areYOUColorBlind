@@ -101,12 +101,9 @@ public class OtherGame
         this.setLayout(null);
         theScore = new JTextPane();
 
-        randomColor = new Color(Driver.getG1Red(), Driver.getG1Green(), Driver.getG1Blue());
-        System.out.println("Red: " + Driver.getG1Red());
-        System.out.println("Green: " + Driver.getG1Green());
-        System.out.println("Blue: " + Driver.getG1Blue());
+        randomColor = Driver.getRandColor();
 
-        diffColor = brighten(randomColor, 0.05);
+        diffColor = Driver.getDiffColor();
 
         sq1 = new JButton();
         sq2 = new JButton();
@@ -394,8 +391,8 @@ public class OtherGame
     public void nextLevel()
     {
         Driver.generateGame2State();
-        randomColor = new Color(Driver.getG1Red(), Driver.getG1Green(), Driver.getG1Blue());
-        diffColor = brighten(randomColor, 0.05);
+        randomColor = Driver.getRandColor();
+        diffColor = Driver.getDiffColor();
         if (clicks >= 14)
         {
 
@@ -468,28 +465,6 @@ public class OtherGame
     }
 
 
-    /**
-     * brightens a color taken in
-     *
-     * @param color
-     *            parameter
-     * @param fraction
-     *            how much
-     * @return new brighter color
-     */
-    public static Color brighten(Color color, double fraction)
-    {
-
-        int red = (int)Math.round(Math.min(255, color.getRed() + 255 * fraction));
-        int green = (int)Math.round(Math.min(255, color.getGreen() + 255 * fraction));
-        int blue = (int)Math.round(Math.min(255, color.getBlue() + 255 * fraction));
-
-        int alpha = color.getAlpha();
-
-        return new Color(red, green, blue, alpha);
-
-    }
-
 
     /**
      * restarts game
@@ -500,8 +475,8 @@ public class OtherGame
         clicks = 0;
         score = 0;
 
-        randomColor = new Color(Driver.getG1Red(), Driver.getG1Green(), Driver.getG1Blue());
-        diffColor = brighten(randomColor, 0.05);
+        randomColor = Driver.getRandColor();
+        diffColor = Driver.getDiffColor();
 
         remove(goTo);
         nextLevel();

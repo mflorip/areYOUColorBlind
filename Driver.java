@@ -3,6 +3,7 @@ package iColor;
 import java.awt.BorderLayout;
 import java.util.Random;
 import javax.swing.JFrame;
+import java.awt.Color;
 
 /**
  * driver class runs everything
@@ -13,18 +14,22 @@ import javax.swing.JFrame;
 public class Driver
 {
 
-    private static final Random rand1      = new Random();
-    private static int          game1state = num1to9();
-    private static int          game2state = num1tonine();
+    private static final Random rand1       = new Random();
+    private static int          game1state  = num1to9();
+    private static int          game2state  = num1tonine();
 
-    private static float g1r  = (float)(rand1.nextFloat() / 2f + 0.5);
-    private static float g1g   = (float)(rand1.nextFloat() / 2f + 0.5);
-    private static float g1b  = (float)(rand1.nextFloat() / 2f + 0.5);
+    //private static Color[] primaryColors = new Color[5];
 
+    private static Color        randomColor = new Color(
+        (float)(rand1.nextFloat() / 2f + 0.5),
+        (float)(rand1.nextFloat() / 2f + 0.5),
+        (float)(rand1.nextFloat() / 2f + 0.5));
+
+    private static Color        diffColor = brighten(randomColor, 0.05);
     /**
      * sets the current page
      */
-    static volatile int         page       = 0;
+    static volatile int         page        = 0;
 
     private static int num1to9()
     { // rename to num1to9
@@ -45,9 +50,11 @@ public class Driver
      */
     public static void generateGame1State()
     {
-        g1r   = (float)(rand1.nextFloat() / 2f + 0.5);
-        g1g   = (float)(rand1.nextFloat() / 2f + 0.5);
-        g1b  = (float)(rand1.nextFloat() / 2f + 0.5);
+        randomColor = new Color(
+            (float)(rand1.nextFloat() / 2f + 0.5),
+            (float)(rand1.nextFloat() / 2f + 0.5),
+            (float)(rand1.nextFloat() / 2f + 0.5));
+        diffColor = brighten(randomColor, 0.05);
         game1state = num1to9();
     }
 
@@ -57,11 +64,44 @@ public class Driver
      */
     public static void generateGame2State()
     {
-        g1r   = (float)(rand1.nextFloat() / 2f + 0.5);
-        g1g   = (float)(rand1.nextFloat() / 2f + 0.5);
-        g1b  = (float)(rand1.nextFloat() / 2f + 0.5);
+        randomColor = new Color(
+            (float)(rand1.nextFloat() / 2f + 0.5),
+            (float)(rand1.nextFloat() / 2f + 0.5),
+            (float)(rand1.nextFloat() / 2f + 0.5));
+        diffColor = brighten(randomColor, 0.05);
         game2state = num1tonine();
     }
+
+    public static Color getRandColor() {
+        return randomColor;
+    }
+
+    public static Color getDiffColor() {
+        return diffColor;
+    }
+
+    /**
+     * brightens a color taken as a parameter
+     *
+     * @param color
+     *            parameter
+     * @param fraction
+     *            how much
+     * @return the new brightened color
+     */
+    public static Color brighten(Color color, double fraction)
+    {
+
+        int red = (int)Math.round(Math.min(255, color.getRed() + 255 * fraction));
+        int green = (int)Math.round(Math.min(255, color.getGreen() + 255 * fraction));
+        int blue = (int)Math.round(Math.min(255, color.getBlue() + 255 * fraction));
+
+        int alpha = color.getAlpha();
+
+        return new Color(red, green, blue, alpha);
+
+    }
+
 
 
     /**
@@ -72,36 +112,6 @@ public class Driver
     public static int getGame1State()
     {
         return game1state;
-    }
-
-    /**
-     * returns game 1 red
-     *
-     * @return game 1 state
-     */
-    public static float getG1Red()
-    {
-        return g1r;
-    }
-
-    /**
-     * returns game 1 red
-     *
-     * @return game 1 state
-     */
-    public static float getG1Green()
-    {
-        return g1g;
-    }
-
-    /**
-     * returns game 1 blue
-     *
-     * @return game 1 state
-     */
-    public static float getG1Blue()
-    {
-        return g1b;
     }
 
 

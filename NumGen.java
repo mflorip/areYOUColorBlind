@@ -25,8 +25,8 @@ public class NumGen
 
     public void paintComponent(Graphics g)
     {
-        bgColor = new Color(Driver.getG1Red(), Driver.getG1Green(), Driver.getG1Blue());
-        randomColor = brighten(bgColor, 0.05);
+        bgColor = Driver.getRandColor();
+        randomColor = Driver.getDiffColor();
 
         super.paintComponent(g);
         this.setBackground(Color.GREEN);
@@ -264,29 +264,6 @@ public class NumGen
             g2d.setPaint(randomColor);
             g2d.fillRect(230, 215, 100, 30);
         }
-
-    }
-
-
-    /**
-     * brightens a color taken as a parameter
-     *
-     * @param color
-     *            parameter
-     * @param fraction
-     *            how much
-     * @return the new brightened color
-     */
-    public static Color brighten(Color color, double fraction)
-    {
-
-        int red = (int)Math.round(Math.min(255, color.getRed() + 255 * fraction));
-        int green = (int)Math.round(Math.min(255, color.getGreen() + 255 * fraction));
-        int blue = (int)Math.round(Math.min(255, color.getBlue() + 255 * fraction));
-
-        int alpha = color.getAlpha();
-
-        return new Color(red, green, blue, alpha);
 
     }
 
